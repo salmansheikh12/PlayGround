@@ -1,0 +1,148 @@
+/* Front image */
+section {
+
+    float: inline-end;
+}
+
+.name {
+
+    font-size: 100px;
+
+    color: white;
+
+    text-align: center;
+
+    margin: 0 auto;
+    text-align: center;
+    padding: 5rem 5vw;
+    position: relative;
+    border-bottom: 1px solid var(--color-border);
+
+
+}
+
+.spacer1 {
+    aspect-ratio: 960/300;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url("../images/vert-wave1.svg");  
+}
+
+.spacer2 {
+    aspect-ratio: 960/300;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url("../images/vert-wave2.svg");
+  
+}
+
+#profile-wrapper {
+    text-align: center;
+
+}
+
+#profile-pic{
+    border-radius: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul{
+    padding: 0;
+    list-style-type: none;
+
+}
+
+.social-links ul, li{
+    list-style-type: none;
+    display: inline-block;
+}
+
+.social{
+    width: 20px;
+    height: 20px;
+}
+
+#sectionColor{
+    color: white;
+}
+
+.card-light{ 
+    border-radius: 1rem;
+    border: 1px solid transparent;
+
+    backdrop-filter: blur(1rem);
+    box-shadow: 1.3rem 1.3rem 1.3rem rgba(0,0,0, 0.34);
+
+    background-color: rgba(225, 225, 225, 0.1);
+
+    color: white;
+}
+
+.card-dark{ 
+    border-radius: 1rem;
+    border: 1px solid transparent;
+
+    backdrop-filter: blur(1rem);
+    box-shadow: 1.3rem 1.3rem 1.3rem rgba(0, 0, 0, 0.34);
+
+    background-color: rgba(0, 0, 0, 0.315);
+
+    color: white;
+}
+
+.container {
+
+    padding-top: 80px;
+    padding-bottom: 120px;
+
+}
+
+#sep {
+    height: 1px;
+    background-color: white;
+    border: none;
+}
+
+.projFont {
+    font-size: 13px;
+}
+
+.readMore {
+    border: none;
+    background:linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    padding: 6px 27px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px; 
+    transition: .4s;
+
+
+    display: block;
+    margin-left: auto;
+
+    backdrop-filter: blur(1rem);
+    box-shadow: 1.3rem 1.3rem 1.3rem rgba(0,0,0, 0.34);
+
+
+}
+
+.readMore a:hover{
+    text-decoration: none;
+    color: #a1a1a1
+}
+
+.readMore a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.readMore:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}

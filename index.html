@@ -1,0 +1,258 @@
+<!-- CSS styling-->
+<link href="{% static '/css/home.css' %}" rel="stylesheet" type="text/css">
+
+<!-- <link href="{% static '/images' %}" rel="stylesheet"> -->
+
+<!-- Animate On Scroll-->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="staticfiles/js/parallax.min.js"></script>  
+<script>
+  AOS.init({
+    duration: 2000,
+    // once: true,
+
+  });
+</script>
+
+
+<section  class="parallax-window" data-parallax="scroll" data-image-src="staticfiles/images/CLIFF.JPG" 
+	data-natural-height="500" data-bleed="10" data-speed="0.2" style="min-height: 648px">
+
+        <div class="container"  data-aos="fade-in">
+    
+            <h1 class="name" >
+                <strong>
+                    <span >Salman Sheikh</span>
+                </strong>
+            </h1> 
+    
+    
+        </div>
+    
+</section>
+
+<section class="spacer1">
+
+    <div class="container">
+
+        <div class ="row">
+            <div class="col-md-3">
+                <div class="card-light card-body h-100" id="profile-wrapper"  data-aos="zoom-out-right" >
+                    <img class="img-fluid" id="profile-pic" src="{% static 'images/CLIFF.jpg' %}">
+                    <hr id="sep">
+                    <h4>Salman Sheikh</h4>
+                    <p>Passonate Computer Scientist interested in Software Development, Cyber Security, Information Technology, and Computer Science related topics! </p>
+                    
+                    <ul class="social-links">
+                        <li><a href="https://www.linkedin.com/in/salman1sheikh1" target="_blank"><img class="social" src="{% static 'images/linkedin.png' %}"></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="card-light card-body h-100" data-aos="zoom-out-left">
+                    <h3>Education</h3>
+                    <hr id="sep">
+                    <p><strong><em>Bachelor of Science in Computer Science</em></strong> | <strong><em>CALIFORNIA STATE UNIVERSITY OF LOS ANGELES</em> Anticipated: May 2023</strong></p>
+                    <p>ACADEMIC STANDING:</p>
+                    <ul>
+                        <li>●   Current GPA: 3.85 (MAGNA CUM LAUDE) &bull; Seven-time Dean&rsquo;s List Recipient (2019 - 2022)</li>
+                    </ul>
+                    <p>RELEVANT COURSEWORK:</p>
+                    <ul>
+                        <li>●   Web and Internet Programming <strong>|</strong> Software Engineering <strong>|</strong> Analysis of Algorithms <strong>|</strong> Wireless &amp; Network Security <strong>|</strong> Compilers <strong>|</strong> Cyber Security <strong>|</strong> Computer Graphics <strong>|</strong> Data Science <strong>|</strong> Web Design <strong>|</strong> Advanced Machine Learning</li>
+                    </ul>
+                    <p>SKILLS:</p>
+                    <ul>
+                        <li>●   Python &bull; Java &bull; C++ &bull; C &bull; HTML &bull; JavaScript &bull; JSON &bull; CSS &bull; Bootstraps &bull; Bulma &bull; SQL &bull; MongoDB &bull; JavaFX &bull; GitHub &bull; Windows &bull; MacOS &bull; Microsoft Office &bull; Google Drive &bull; Technical Writing</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <br>
+        <!-- <button type="button" class="readMore" data-aos="zoom-out-left"><a href="">Read More!</a></button> -->
+
+    </div>
+
+    <br>
+
+
+
+</section>
+
+<section class="parallax-window" data-parallax="scroll" data-image-src="staticfiles/images/griffth.JPG" 
+    data-natural-height="500" data-bleed="10" data-speed="0.2" style="min-height: 648px">
+
+    <div class="container">
+
+        <div class ="row">
+            <div class="col-md-12">
+                <div class="card-dark card-body  h-100 " data-aos="zoom-in" >
+                    <h3 class="text-center">Experience</h3>
+                    <hr id="sep">
+
+                    {% for ex in exps %}
+                        {% if forloop.counter <= 3%}
+                        <p>
+
+                            <strong> {{ ex.position }} | </strong> {{ex.company}}, {{ex.location}} <strong> {{ex.textDate}}</strong>
+                            <br>
+                            {{ex.description|linebreaksbr}}                     
+
+                        </p>
+                        {% endif %}
+                      
+
+
+                    {% endfor %}
+
+                    <button type="button" class="readMore"><a href="{% url 'experience' %}">Read More!</a></button>
+
+                </div>
+            </div>
+        </div> 
+
+    </div>
+
+    <br>
+
+</section>
+
+
+
+<section class="spacer2">
+
+    <div class="padding container">
+    
+        <h3 class="text-center" id="sectionColor" >Projects</h3>
+
+        <hr id="sep">
+
+        <div class ="row">
+
+            <div class="col-md-6">
+                <div class="projFont card-light card-body h-100" data-aos="fade-right">
+
+                    <p>
+                        
+                        <strong>{{projs.0.title}}</strong> | {{projs.0.location}} <strong>{{projs.0.textDate}}</strong>
+
+
+                        <hr id="sep">
+                    
+                        {{projs.0.description|linebreaksbr}} 
+
+                    </p>
+
+
+                </div>
+            </div>
+
+        
+
+            <div class="col-md-6">
+                <div class="projFont card-light card-body h-100" data-aos="fade-left">
+                    <p>
+                        
+                        <strong>{{projs.1.title}}</strong> | {{projs.1.location}} <strong>{{projs.1.textDate}}</strong>
+
+
+                        <hr id="sep">
+                    
+                        {{projs.1.description|linebreaksbr}} 
+
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+
+        <br>
+        
+        <div class ="row">
+            <div class="col-md-6">
+                <div class="projFont card-light card-body h-100"  data-aos="fade-right">
+                    <p>
+                        
+                        <strong>{{projs.2.title}}</strong> | {{projs.2.location}} <strong>{{projs.2.textDate}}</strong>
+
+
+                        <hr id="sep">
+                    
+                        {{projs.2.description|linebreaksbr}} 
+
+                    </p>
+
+
+                </div>
+            </div>
+
+            
+
+            <div class="col-md-6"> 
+                
+                <div class="projFont card-light card-body h-100"  data-aos="fade-left">
+                    <p>
+                        
+                        <strong>{{projs.3.title}}</strong> | {{projs.3.location}} <strong>{{projs.3.textDate}}</strong>
+
+
+                        <hr id="sep">
+                    
+                        {{projs.3.description|linebreaksbr}} 
+
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+        
+        <br>
+        <button type="button" class="readMore" data-aos="zoom-out-left"><a href="{% url 'project' %}">Read More!</a></button>
+
+
+    </div>
+
+    <br>
+
+</section>
+
+<section class="parallax-window" data-parallax="scroll" data-image-src="staticfiles/images/SuperCarRow.JPG" 
+    data-natural-height="500" data-bleed="10" data-speed="0.2" style="min-height: 648px">
+
+    <div class="container">
+
+        <div class ="row">
+            <div class="col-md-12">
+
+                <div class="card-dark card-body  h-100 " data-aos="fade-right" >
+                    <h3 class="text-center">Blog</h3>
+                    <hr id="sep">
+                     <p  data-aos="fade-up">
+
+                        <strong> {{ conts.1.position }} </strong>
+                        <br>
+                        {{conts.1.description|linebreaksbr}}                     
+
+                    </p>
+
+                    <br>
+                    <button type="button" class="readMore" ><a>Coming Soon!</a></button>
+
+
+                </div>
+
+            </div>
+        </div>  
+
+    </div>
+
+    <br>
+</section>
+
+   
