@@ -1,258 +1,144 @@
-<!-- CSS styling-->
-<link href="{% static '/css/home.css' %}" rel="stylesheet" type="text/css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- <link href="{% static '/images' %}" rel="stylesheet"> -->
+    <link href="css/home.css" rel="stylesheet" type="text/css">
+    <link href="css/navbar.css" rel="stylesheet" type="text/css">
 
-<!-- Animate On Scroll-->
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script src="staticfiles/js/parallax.min.js"></script>  
-<script>
-  AOS.init({
-    duration: 2000,
-    // once: true,
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-  });
-</script>
-
-
-<section  class="parallax-window" data-parallax="scroll" data-image-src="staticfiles/images/CLIFF.JPG" 
-	data-natural-height="500" data-bleed="10" data-speed="0.2" style="min-height: 648px">
-
-        <div class="container"  data-aos="fade-in">
-    
-            <h1 class="name" >
-                <strong>
-                    <span >Salman Sheikh</span>
-                </strong>
-            </h1> 
-    
-    
-        </div>
-    
-</section>
-
-<section class="spacer1">
-
-    <div class="container">
-
-        <div class ="row">
-            <div class="col-md-3">
-                <div class="card-light card-body h-100" id="profile-wrapper"  data-aos="zoom-out-right" >
-                    <img class="img-fluid" id="profile-pic" src="{% static 'images/CLIFF.jpg' %}">
-                    <hr id="sep">
-                    <h4>Salman Sheikh</h4>
-                    <p>Passonate Computer Scientist interested in Software Development, Cyber Security, Information Technology, and Computer Science related topics! </p>
-                    
-                    <ul class="social-links">
-                        <li><a href="https://www.linkedin.com/in/salman1sheikh1" target="_blank"><img class="social" src="{% static 'images/linkedin.png' %}"></a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="col-md-9">
-                <div class="card-light card-body h-100" data-aos="zoom-out-left">
-                    <h3>Education</h3>
-                    <hr id="sep">
-                    <p><strong><em>Bachelor of Science in Computer Science</em></strong> | <strong><em>CALIFORNIA STATE UNIVERSITY OF LOS ANGELES</em> Anticipated: May 2023</strong></p>
-                    <p>ACADEMIC STANDING:</p>
-                    <ul>
-                        <li>●   Current GPA: 3.85 (MAGNA CUM LAUDE) &bull; Seven-time Dean&rsquo;s List Recipient (2019 - 2022)</li>
-                    </ul>
-                    <p>RELEVANT COURSEWORK:</p>
-                    <ul>
-                        <li>●   Web and Internet Programming <strong>|</strong> Software Engineering <strong>|</strong> Analysis of Algorithms <strong>|</strong> Wireless &amp; Network Security <strong>|</strong> Compilers <strong>|</strong> Cyber Security <strong>|</strong> Computer Graphics <strong>|</strong> Data Science <strong>|</strong> Web Design <strong>|</strong> Advanced Machine Learning</li>
-                    </ul>
-                    <p>SKILLS:</p>
-                    <ul>
-                        <li>●   Python &bull; Java &bull; C++ &bull; C &bull; HTML &bull; JavaScript &bull; JSON &bull; CSS &bull; Bootstraps &bull; Bulma &bull; SQL &bull; MongoDB &bull; JavaFX &bull; GitHub &bull; Windows &bull; MacOS &bull; Microsoft Office &bull; Google Drive &bull; Technical Writing</li>
-                    </ul>
-                    </p>
-                </div>
-            </div>
-        </div>
-        
-        <br>
-        <!-- <button type="button" class="readMore" data-aos="zoom-out-left"><a href="">Read More!</a></button> -->
-
-    </div>
-
-    <br>
+    <!-- nav -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
 
-</section>
 
-<section class="parallax-window" data-parallax="scroll" data-image-src="staticfiles/images/griffth.JPG" 
-    data-natural-height="500" data-bleed="10" data-speed="0.2" style="min-height: 648px">
+    <title>Salman Sheikh</title>
 
-    <div class="container">
-
-        <div class ="row">
-            <div class="col-md-12">
-                <div class="card-dark card-body  h-100 " data-aos="zoom-in" >
-                    <h3 class="text-center">Experience</h3>
-                    <hr id="sep">
-
-                    {% for ex in exps %}
-                        {% if forloop.counter <= 3%}
-                        <p>
-
-                            <strong> {{ ex.position }} | </strong> {{ex.company}}, {{ex.location}} <strong> {{ex.textDate}}</strong>
-                            <br>
-                            {{ex.description|linebreaksbr}}                     
-
-                        </p>
-                        {% endif %}
-                      
-
-
-                    {% endfor %}
-
-                    <button type="button" class="readMore"><a href="{% url 'experience' %}">Read More!</a></button>
-
-                </div>
-            </div>
-        </div> 
-
-    </div>
-
-    <br>
-
-</section>
-
-
-
-<section class="spacer2">
-
-    <div class="padding container">
-    
-        <h3 class="text-center" id="sectionColor" >Projects</h3>
-
-        <hr id="sep">
-
-        <div class ="row">
-
-            <div class="col-md-6">
-                <div class="projFont card-light card-body h-100" data-aos="fade-right">
-
-                    <p>
-                        
-                        <strong>{{projs.0.title}}</strong> | {{projs.0.location}} <strong>{{projs.0.textDate}}</strong>
-
-
-                        <hr id="sep">
-                    
-                        {{projs.0.description|linebreaksbr}} 
-
-                    </p>
-
-
-                </div>
-            </div>
 
         
-
-            <div class="col-md-6">
-                <div class="projFont card-light card-body h-100" data-aos="fade-left">
-                    <p>
-                        
-                        <strong>{{projs.1.title}}</strong> | {{projs.1.location}} <strong>{{projs.1.textDate}}</strong>
-
-
-                        <hr id="sep">
-                    
-                        {{projs.1.description|linebreaksbr}} 
-
-                    </p>
-
-
-                </div>
-            </div>
-        </div>
-
-        <br>
+    <nav class="nav navbar navbar-expand-lg" >
+    
+        <button class="navbar-toggler btn3 navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
         
-        <div class ="row">
-            <div class="col-md-6">
-                <div class="projFont card-light card-body h-100"  data-aos="fade-right">
-                    <p>
-                        
-                        <strong>{{projs.2.title}}</strong> | {{projs.2.location}} <strong>{{projs.2.textDate}}</strong>
-
-
-                        <hr id="sep">
-                    
-                        {{projs.2.description|linebreaksbr}} 
-
-                    </p>
-
-
-                </div>
-            </div>
-
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+          
+      
+          <ul class="navnavbar-nav mr-auto">
+            <h2 class="navbar-brand logo" href="/">Salman <span class="span1">Sheikh</span></h2>
             
-
-            <div class="col-md-6"> 
                 
-                <div class="projFont card-light card-body h-100"  data-aos="fade-left">
-                    <p>
-                        
-                        <strong>{{projs.3.title}}</strong> | {{projs.3.location}} <strong>{{projs.3.textDate}}</strong>
-
-
-                        <hr id="sep">
-                    
-                        {{projs.3.description|linebreaksbr}} 
-
-                    </p>
-
-                </div>
-            </div>
-
-        </div>
+                <li>
+                <a href="{% url 'home' %}">Home</a>
+                </li>
         
-        <br>
-        <button type="button" class="readMore" data-aos="zoom-out-left"><a href="{% url 'project' %}">Read More!</a></button>
+                <li>
+                    <a href="{% url 'experience' %}">Experience</a>
+                </li>
+        
+                <li>
+                    <a href="{% url 'project' %}">Projects</a>
+                </li>
+      
+          </ul>
+      
+      
+          <br>
+      
+        </div>
+      
+      </nav>
 
 
-    </div>
-
-    <br>
-
-</section>
-
-<section class="parallax-window" data-parallax="scroll" data-image-src="staticfiles/images/SuperCarRow.JPG" 
-    data-natural-height="500" data-bleed="10" data-speed="0.2" style="min-height: 648px">
-
-    <div class="container">
-
-        <div class ="row">
-            <div class="col-md-12">
-
-                <div class="card-dark card-body  h-100 " data-aos="fade-right" >
-                    <h3 class="text-center">Blog</h3>
-                    <hr id="sep">
-                     <p  data-aos="fade-up">
-
-                        <strong> {{ conts.1.position }} </strong>
-                        <br>
-                        {{conts.1.description|linebreaksbr}}                     
-
-                    </p>
-
-                    <br>
-                    <button type="button" class="readMore" ><a>Coming Soon!</a></button>
 
 
+<!-- <body>
+
+
+
+ 
+
+    
+      
+
+    <section class="img1">
+
+            <div class="container">
+        
+                <h1 class="name" >
+                    <strong>
+                        <span>Salman Sheikh</span>
+                    </strong>
+                </h1> 
+                <p class="sub name">a.k.a Top G</p>
+        
+            </div>
+        
+    </section>
+
+
+
+    <section class="spacer1">
+
+        <div class="container">
+
+            <div class ="row">
+                <div class="col-md-3">
+                    <div class="card-light card-body h-100" id="profile-wrapper" >
+                        <img class="img-fluid" id="profile-pic" src="images/CLIFF.jpg">
+                        <hr id="sep">
+                        <h4>Salman Sheikh</h4>
+                        <p>Passonate Computer Scientist interested in Software Development, Cyber Security, Information Technology, and Computer Science related topics! </p>
+                        
+                        <ul class="social-links">
+                            <li><a href="https://www.linkedin.com/in/salman1sheikh1" target="_blank"><img class="social" src="{% static 'images/linkedin.png' %}"></a></li>
+                        </ul>
+                    </div>
                 </div>
 
+                <div class="col-md-9">
+                    <div class="card-light card-body h-100">
+                        <h3>Education</h3>
+                        <hr id="sep">
+                        <p><strong><em>Bachelor of Science in Computer Science</em></strong> | <strong><em>CALIFORNIA STATE UNIVERSITY OF LOS ANGELES</em> Anticipated: May 2023</strong></p>
+                        <p>ACADEMIC STANDING:</p>
+                        <ul>
+                            <li>●   Current GPA: 3.85 (MAGNA CUM LAUDE) &bull; Seven-time Dean&rsquo;s List Recipient (2019 - 2022)</li>
+                        </ul>
+                        <p>RELEVANT COURSEWORK:</p>
+                        <ul>
+                            <li>●   Web and Internet Programming <strong>|</strong> Software Engineering <strong>|</strong> Analysis of Algorithms <strong>|</strong> Wireless &amp; Network Security <strong>|</strong> Compilers <strong>|</strong> Cyber Security <strong>|</strong> Computer Graphics <strong>|</strong> Data Science <strong>|</strong> Web Design <strong>|</strong> Advanced Machine Learning</li>
+                        </ul>
+                        <p>SKILLS:</p>
+                        <ul>
+                            <li>●   Python &bull; Java &bull; C++ &bull; C &bull; HTML &bull; JavaScript &bull; JSON &bull; CSS &bull; Bootstraps &bull; Bulma &bull; SQL &bull; MongoDB &bull; JavaFX &bull; GitHub &bull; Windows &bull; MacOS &bull; Microsoft Office &bull; Google Drive &bull; Technical Writing</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div>  
+            
+        </div>
 
-    </div>
+        <br>
 
-    <br>
-</section>
 
-   
+
+    </section>
+    
+</body> -->
+</html>
+
+
+
+
